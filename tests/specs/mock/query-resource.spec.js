@@ -378,7 +378,7 @@ describe('Query Resource Mock', function() {
             dataStore.save(resource, function() {
               helper.initTest(dataStore, api, function(supertest) {
                 var request = supertest[method]('/api/pets/Fido');
-                noHeaders || request.expect('Content-Type', 'application/json');
+                noHeaders || request.expect('Content-Type', 'application/json; charset=utf-8');
                 request.expect(200, '');
                 request.end(helper.checkResults(done, function(res) {
                   expect(res.headers['content-length']).to.satisfy(function(contentLength) {
@@ -518,7 +518,7 @@ describe('Query Resource Mock', function() {
                     }
                     else {
                       expect(res2.body).to.be.empty;
-                      expect(res2.text).to.have.lengthOf(258441);
+                      expect(res2.text).to.have.length.at.least(255063).and.at.most(258441);  // CRLF vs LF
                     }
                     done();
                   }));
@@ -545,7 +545,7 @@ describe('Query Resource Mock', function() {
                   var photoID = parseInt(res1.headers.location.match(/(\d+)$/)[0]);
 
                   var request = supertest[method](res1.headers.location);
-                  noHeaders || request.expect('Content-Length', isWindows ? 95 : 87);      // CRLF vs LF
+                  noHeaders || request.expect('Content-Length', /^(95|87)$/);      // CRLF vs LF
                   noHeaders || request.expect('Content-Type', 'text/plain; charset=UTF-8');
 
                   // The filename is set to the basename of the URL by default
@@ -558,7 +558,7 @@ describe('Query Resource Mock', function() {
                     }
                     else {
                       expect(res2.body).to.be.empty;
-                      expect(res2.text).to.have.lengthOf(isWindows ? 95 : 87);    // CRLF vs LF
+                      expect(res2.text).to.have.length.at.least(87).and.at.most(95);  // CRLF vs LF
                     }
                     done();
                   }));
@@ -597,7 +597,7 @@ describe('Query Resource Mock', function() {
                     }
                     else {
                       expect(res2.body).to.be.empty;
-                      expect(res2.text).to.have.lengthOf(258441);
+                      expect(res2.text).to.have.length.at.least(255063).and.at.most(258441);  // CRLF vs LF
                     }
                     done();
                   }));

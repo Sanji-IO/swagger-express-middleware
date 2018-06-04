@@ -5,8 +5,7 @@ Swagger Express Middleware
 [![Build Status](https://api.travis-ci.org/BigstickCarpet/swagger-express-middleware.svg)](https://travis-ci.org/BigstickCarpet/swagger-express-middleware)
 [![Dependencies](https://david-dm.org/BigstickCarpet/swagger-express-middleware.svg)](https://david-dm.org/BigstickCarpet/swagger-express-middleware)
 [![Coverage Status](https://coveralls.io/repos/BigstickCarpet/swagger-express-middleware/badge.svg?branch=master&service=github)](https://coveralls.io/r/BigstickCarpet/swagger-express-middleware)
-[![Code Climate Score](https://codeclimate.com/github/BigstickCarpet/swagger-express-middleware/badges/gpa.svg)](https://codeclimate.com/github/BigstickCarpet/swagger-express-middleware)
-[![Codacy Score](https://www.codacy.com/project/badge/011f89f6f0dd46e5b9b5d3662a51213d)](https://www.codacy.com/public/jamesmessinger/swagger-express-middleware)
+[![Codacy Score](https://api.codacy.com/project/badge/Grade/011f89f6f0dd46e5b9b5d3662a51213d)](https://www.codacy.com/public/jamesmessinger/swagger-express-middleware)
 [![Inline docs](http://inch-ci.org/github/BigstickCarpet/swagger-express-middleware.svg?branch=master&style=shields)](http://inch-ci.org/github/BigstickCarpet/swagger-express-middleware)
 
 [![npm](http://img.shields.io/npm/v/swagger-express-middleware.svg)](https://www.npmjs.com/package/swagger-express-middleware)
@@ -20,7 +19,7 @@ Features
 Swagger Express Middleware uses [Swagger-Parser](https://github.com/BigstickCarpet/swagger-parser) to parse, validate, and dereference Swagger files.  You can even split your spec into multiple different files using `$ref` pointers.
 
 - **Thoroughly tested**<br>
-Over 1,000 unit tests and integration tests with 100% code coverage.  Tested on [over 100 Google APIs](https://github.com/APIs-guru/api-models/tree/master/googleapis.com).  All tests are run on Mac, Linux, and Windows using the past 3 versions of Node. But nothing's perfect, so if you find a bug, [please report it](https://github.com/BigstickCarpet/swagger-express-middleware/issues).
+Over 1,000 unit tests and integration tests with 100% code coverage.  Tested on [over 100 Google APIs](https://github.com/APIs-guru/api-models/tree/master/APIs/googleapis.com).  All tests are run on Mac, Linux, and Windows using the past 3 versions of Node. But nothing's perfect, so if you find a bug, [please report it](https://github.com/BigstickCarpet/swagger-express-middleware/issues).
 
 - [**Mock middleware**](https://github.com/BigstickCarpet/swagger-express-middleware/blob/master/docs/middleware/mock.md)<br>
 **Fully-functional mock** implementations for every operation in your API, including data persistence, all with **zero code!**  This is a great way to test-drive your API as you write it, or for quick demos and POCs.  You can even extend the mock middleware with your own logic and data to fill in any gaps.
